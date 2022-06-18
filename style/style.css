@@ -1,0 +1,13 @@
+body {
+    background-image: url(../image/investment-finance-time-return-on-investment-b28a1a1df72e50a9709b978ab7147eaa.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.row {
+    min-height: 97vh;
+}
+
+#minimum, #maximum, #values {
+    height: 35px;
+}
