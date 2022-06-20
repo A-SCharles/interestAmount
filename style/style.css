@@ -8,6 +8,6 @@ body {
     min-height: 97vh;
 }
 
-#minimum, #maximum, #values {
+#interestAmount {
     height: 35px;
 }
