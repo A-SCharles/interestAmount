@@ -7,39 +7,45 @@ const years = document.getElementById("years");
 const display = document.getElementById("interestAmount");
 
 // getting interest type selected option
-let select = document.getElementById("interestType");
+let select = document.querySelector("#interestType");
 let option = select.value;
 
 // getting compound type option
-let compoundSelect = document.getElementById("compounded");
+let compoundSelect = document.querySelector("#compounded");
 let compoundOption = compoundSelect.value;
 
 const btnCalc = document.getElementById("calculate");
-btnCalc.addEventListener("click", (P, i, n) => {
+btnCalc.addEventListener("click", (P, R, t, n, I) => {
   P = initialAmount.value;
-  i = interest.value;
-  n = years.value;
-
+  t = years.value;
+  R = interest.value / 100;
   // Simple
-  if ((option.value = "simple")) {
-    let SI = P * (1 + i * n);
-    display.innerHTML = SI;
-
+  if ((select.value == "simple")) {
+    let SI = P * (1 + R * t);
+    SI = SI.toFixed(2);
+    I = SI - P;
+    I = I.toFixed(2);
+    display.innerHTML = "Your Total is: " + SI + " Your Interest is: " + I;
+    console.log(select.value)
     // Compound interest
-  } else if ((option.value = "compound")) {
+  } else if ((select.value == "compound")) {
     // amount of times compounded
-    let r = 0;
-
-    if ((compoundOption.value = "4")) {
-      r = 4;
-    } else if ((compoundOption.value = "6")) {
-      r = 6;
-    } else if ((compoundOption.value = "12")) {
-      r = 12;
+    if ((compoundSelect.value == "4")) {
+      n = 4;
+    } else if ((compoundSelect.value == "6")) {
+      n = 6;
+    } else if ((compoundSelect.value  == "12")) {
+      n = 12;
     }
+
     // Compound
-    let CI = P * (Math.pow(1 + i / r), r * n) - P;
-    display.innerHTML = CI;
+    // Amounts
+    let CI = P * Math.pow(1 + R / n, n * t) - P;
+    CI = CI.toFixed(2);
+    // Interest
+    I = CI - P;
+    I = I.toFixed(2);
+    display.innerHTML = "Your Total is: " + CI + " Your Interest is: " + I;
   }
 });
 
@@ -58,3 +64,4 @@ const Year = new Date().getFullYear();
 document.getElementById("footer").innerHTML = `
 &copyAbdus-Samad Charles ${Year}
 `;
+

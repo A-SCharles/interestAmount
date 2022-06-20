@@ -36,14 +36,14 @@
           <input type="text" class="form-control mb-2" name="Years" id="years">
           <!-- simple interest / compound interest -->
           <label for="interestType">Interest Type:</label>
-          <select name="interestType" id="interestType">
+          <select class="form-select" onchange="changeselect()" name="interestType" id="interestType">
             <option value="">Select Interest Type</option>
             <option value="simple">Simple Interest</option>
             <option value="compound">Compound Interest</option>
           </select>
-          <br>
+          
           <label for="compounded">Times Compounded:</label>
-          <select name="interestType" id="compounded">
+          <select class="form-select" onchange="changeselect2()" name="interestType" id="compounded">
             <option value="">Select Compound Rate</option>
             <option value="4">Quarterly</option>
             <option value="6">Semi-Annually</option>
