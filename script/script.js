@@ -20,27 +20,29 @@ btnCalc.addEventListener("click", (P, R, t, n, I) => {
   t = years.value;
   R = interest.value / 100;
   // Simple
-  if ((select.value == "simple")) {
+  if (select.value == "simple") {
     let SI = P * (1 + R * t);
     SI = SI.toFixed(2);
     I = SI - P;
     I = I.toFixed(2);
     display.innerHTML = "Your Total is: " + SI + " Your Interest is: " + I;
-    console.log(select.value)
+    console.log(select.value);
     // Compound interest
-  } else if ((select.value == "compound")) {
+  } else if (select.value == "compound") {
     // amount of times compounded
-    if ((compoundSelect.value == "4")) {
+    if (compoundSelect.value == "1") {
+      n = 1;
+    } else if (compoundSelect.value == "4") {
       n = 4;
-    } else if ((compoundSelect.value == "6")) {
+    } else if (compoundSelect.value == "6") {
       n = 6;
-    } else if ((compoundSelect.value  == "12")) {
+    } else if (compoundSelect.value == "12") {
       n = 12;
     }
 
-    // Compound
+    // Compound 
     // Amounts
-    let CI = P * Math.pow(1 + R / n, n * t) - P;
+    let CI = P * Math.pow(1 + R / n, n * t);
     CI = CI.toFixed(2);
     // Interest
     I = CI - P;
@@ -64,4 +66,3 @@ const Year = new Date().getFullYear();
 document.getElementById("footer").innerHTML = `
 &copyAbdus-Samad Charles ${Year}
 `;
-

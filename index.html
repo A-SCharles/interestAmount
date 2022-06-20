@@ -30,24 +30,25 @@
         <div class="form-group my-2">
           <!-- Interest rrate -->
           <label for="interest">Interest Rate:</label>
-          <input type="text" class="form-control mb-2" name="interest" id="interest">
+          <input type="text" class="form-control mb-2" name="interest" id="interest" placeholder="%">
           <!-- Amount of years -->
           <label for="Years">Amount of Years:</label>
           <input type="text" class="form-control mb-2" name="Years" id="years">
           <!-- simple interest / compound interest -->
           <label for="interestType">Interest Type:</label>
-          <select class="form-select" onchange="changeselect()" name="interestType" id="interestType">
+          <select class="form-select" name="interestType" id="interestType">
             <option value="">Select Interest Type</option>
             <option value="simple">Simple Interest</option>
             <option value="compound">Compound Interest</option>
           </select>
-          
+
           <label for="compounded">Times Compounded:</label>
-          <select class="form-select" onchange="changeselect2()" name="interestType" id="compounded">
+          <select class="form-select" name="interestType" id="compounded">
             <option value="">Select Compound Rate</option>
+            <option value="1">Annually</option>
             <option value="4">Quarterly</option>
             <option value="6">Semi-Annually</option>
-            <option value="12">Annually</option>
+            <option value="12">Monthly</option>
           </select>
         </div>
 
